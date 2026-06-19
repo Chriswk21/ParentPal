@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParentPal - Profile</title>
+    <link rel="stylesheet" href="../layout/layout.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../assets/logo.svg" alt="ParentPal Logo" />
+                    </a>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="content.html">Content</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="chatbot.html">Chatbot</a></li>
+                </ul>
+
+                <div class="profile-icon" id="profile-icon">
+                    <div class="profile-image" id="nav-profile-image">
+                        <i class="fas fa-user" id="nav-profile-icon"></i>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                    
+                    <div class="profile-dropdown">
+                        <div class="dropdown-header">
+                            <div class="user-name" id="nav-user-name">John Doe</div>
+                            <div class="user-email" id="nav-user-email">john@example.com</div>
+                            <div class="expert-badge" id="nav-expert-badge" style="display: none;">
+                                <i class="fas fa-star"></i>
+                                Certified Expert
+                            </div>
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="#" class="dropdown-item" onclick="goToDashboard()">
+                                <i class="fas fa-th-large"></i>
+                                Dashboard
+                            </a>
+                            <a href="profile.html" class="dropdown-item">
+                                <i class="fas fa-user"></i>
+                                View Profile
+                            </a>
+                            <a href="faq.html" class="dropdown-item">
+								<i class="fas fa-question-circle"></i>
+								FAQ & Help
+							</a>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                Settings
+                            </a>
+                            <button class="dropdown-item logout-btn" onclick="logout()">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="profile-main">
+        <div class="container">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <div class="avatar-circle" id="avatar-circle">
+                        <i class="fas fa-user" id="avatar-icon"></i>
+                    </div>
+                    <button class="change-avatar-btn" onclick="changeAvatar()">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+                <div class="profile-info">
+                    <h1 id="profile-name">John Doe</h1>
+                    <p class="profile-role" id="profile-role">Parent</p>
+                    <div class="expert-badge" id="expert-badge" style="display: none;">
+                        <i class="fas fa-star"></i>
+                        Certified Expert
+                    </div>
+                    <p class="join-date" id="join-date">Member since January 2024</p>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn-edit" onclick="toggleEditMode()">
+                        <i class="fas fa-edit"></i>
+                        Edit Profile
+                    </button>
+                </div>
+            </div>
+
+            <!-- Profile Content -->
+            <div class="profile-content">
+                <!-- Personal Information -->
+                <div class="profile-section">
+                    <h2>Personal Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>First Name</label>
+                            <div class="info-display">
+                                <span id="display-firstName">John</span>
+                                <input type="text" id="edit-firstName" class="edit-input" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <label>Last Name</label>
+                            <div class="info-display">
+                                <span id="display-lastName">Doe</span>
+                                <input type="text" id="edit-lastName" class="edit-input" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <label>Email</label>
+                            <div class="info-display">
+                                <span id="display-email">john@example.com</span>
+                                <input type="email" id="edit-email" class="edit-input" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <label>Phone</label>
+                            <div class="info-display">
+                                <span id="display-phone">+1234567890</span>
+                                <input type="tel" id="edit-phone" class="edit-input" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expert Information (only for experts) -->
+                <div class="profile-section expert-section" id="expert-section" style="display: none;">
+                    <h2>Expert Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Credentials</label>
+                            <div class="info-display">
+                                <span id="display-credentials">PhD in Child Psychology</span>
+                                <input type="text" id="edit-credentials" class="edit-input" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <label>Specialization</label>
+                            <div class="info-display">
+                                <span id="display-specialization">Early Childhood Development</span>
+                                <input type="text" id="edit-specialization" class="edit-input" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="info-item full-width">
+                            <label>Bio</label>
+                            <div class="info-display">
+                                <span id="display-bio">Experienced child psychologist with over 10 years of practice.</span>
+                                <textarea id="edit-bio" class="edit-input" style="display: none;" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Settings -->
+                <div class="profile-section margin-footer">
+                    <h2>Account Settings</h2>
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>Change Password</h3>
+                                <p>Update your password to keep your account secure</p>
+                            </div>
+                            <button class="btn-secondary" onclick="changePassword()">
+                                Change Password
+                            </button>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>Email Notifications</h3>
+                                <p>Manage your email notification preferences</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="email-notifications" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>Privacy Settings</h3>
+                                <p>Control who can see your profile information</p>
+                            </div>
+                            <select id="privacy-setting" class="privacy-select">
+                                <option value="public">Public</option>
+                                <option value="friends">Friends Only</option>
+                                <option value="private">Private</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit Mode Actions -->
+                <div class="edit-actions" id="edit-actions" style="display: none;">
+                    <button class="btn-save" onclick="saveProfile()">
+                        <i class="fas fa-save"></i>
+                        Save Changes
+                    </button>
+                    <button class="btn-cancel" onclick="cancelEdit()">
+                        <i class="fas fa-times"></i>
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+		<!-- Footer -->
+		<footer>
+			<div class="container">
+				<div class="footer-grid">
+					<!-- Logo and Description -->
+					<div class="footer-about">
+						<div class="footer-logo">
+							<img src="../assets/logo.svg" alt="ParentPal Logo" />
+						</div>
+						<p class="body-text-2">
+							A supportive parenting app that offers expert tips with the aim to
+							nurture, inspire, and provide support for parents anywhere.
+						</p>
+					</div>
+
+					<!-- Information Links -->
+					<div class="footer-info">
+						<h5>Information</h5>
+						<ul class="body-text-2">
+							<li><a href="../index.html#about">About Us</a></li>
+							<li><a href="content.html">Content</a></li>
+							<li><a href="community.html">Community</a></li>
+							<li><a href="chatbot.html">Chatbot</a></li>
+						</ul>
+					</div>
+
+					<!-- Helpful Links -->
+					<div class="footer-links">
+						<h5>Helpful Links</h5>
+						<ul class="body-text-2">
+							<li><a href="faq.html">FAQ & Help</a></li>
+							<li><a href="#">Terms & Condition</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+						</ul>
+					</div>
+
+					<!-- Contact Info -->
+					<div class="footer-contact">
+						<h5>Contact Us</h5>
+						<ul class="body-text-2">
+							<li><i class="fas fa-phone"></i> +62 8888 8888 8888</li>
+							<li><i class="fas fa-envelope"></i> parentpal@gmail.com</li>
+						</ul>
+
+						<!-- Social Media moved here -->
+						<div class="social-links">
+							<a href="#"><i class="fab fa-facebook-f"></i></a>
+							<a href="#"><i class="fab fa-instagram"></i></a>
+							<a href="#"><i class="fab fa-linkedin-in"></i></a>
+							<a href="#"><i class="fab fa-tiktok"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Copyright -->
+				<div class="footer-bottom">
+					<p>Copyright © 2025 ParentPal. All rights reserved.</p>
+				</div>
+			</div>
+		</footer>
+
+    <!-- Change Password Modal -->
+    <div class="modal-overlay" id="password-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Change Password</h3>
+                <button class="modal-close" onclick="closePasswordModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="password-form">
+                    <div class="form-group">
+                        <label for="current-password">Current Password</label>
+                        <input type="password" id="current-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm New Password</label>
+                        <input type="password" id="confirm-password" required>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="submit" class="btn-save">Update Password</button>
+                        <button type="button" class="btn-cancel" onclick="closePasswordModal()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../layout/layout.js"></script>
+    <script src="../js/auth-check.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>

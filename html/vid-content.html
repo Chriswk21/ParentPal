@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Video Content - ParentPal</title>
+		<link rel="stylesheet" href="../css/vid-content.css" />
+		<link rel="stylesheet" href="../layout/layout.css" />
+		<link rel="stylesheet" href="../css/modal.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet" />
+	</head>
+	<body>
+		<!-- Header/Navigation -->
+		<header>
+			<div class="container">
+				<nav class="navbar">
+					<div class="logo">
+						<a href="../index.html">
+							<img src="../assets/logo.svg" alt="ParentPal Logo" />
+						</a>
+					</div>
+	
+					<ul class="nav-links">
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="content.html">Content</a></li>
+						<li><a href="community.html">Community</a></li>
+						<li><a href="chatbot.html">Chatbot</a></li>
+					</ul>
+	
+					<!-- Login button for non-authenticated users -->
+					<div class="desktop-login" id="desktop-login">
+						<a href="login.html" class="login-btn">Login</a>
+					</div>
+	
+					<!-- Profile dropdown for authenticated users -->
+					<div class="profile-icon" id="profile-icon" style="display: none;">
+						<div class="profile-image">
+							<i class="fas fa-user"></i>
+						</div>
+						<i class="fas fa-chevron-down"></i>
+						
+						<div class="profile-dropdown">
+							<div class="dropdown-header">
+								<div class="user-name" id="user-name">John Doe</div>
+								<div class="user-email" id="user-email">john@example.com</div>
+								<div class="expert-badge" style="display: none;">
+                        			<i class="fas fa-star"></i>
+                       		 		Certified Expert
+                    			</div>
+							</div>
+							<div class="dropdown-content">
+								<a href="#" class="dropdown-item" onclick="goToDashboard()">
+									<i class="fas fa-th-large"></i>
+									Dashboard
+								</a>
+								<a href="profile.html" class="dropdown-item">
+									<i class="fas fa-user"></i>
+									View Profile
+								</a>
+								<a href="faq.html" class="dropdown-item">
+									<i class="fas fa-question-circle"></i>
+									FAQ & Help
+								</a>
+								<a href="#" class="dropdown-item">
+									<i class="fas fa-cog"></i>
+									Settings
+								</a>
+								<button class="dropdown-item logout-btn" onclick="logout()">
+									<i class="fas fa-sign-out-alt"></i>
+									Logout
+								</button>
+							</div>
+						</div>
+					</div>
+	
+					<div class="mobile-menu">
+						<i class="fas fa-bars"></i>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Main Content -->
+		<main>
+			<!-- Video Content Section -->
+			<section class="video-content">
+				<div class="container">
+					<div class="container-content">
+						<div class="back-button">
+							<button class="back-btn" onclick="location.href='/html/content.html'">
+								<i class="fas fa-chevron-left"></i>
+							</button>
+						</div>
+	
+						<div class="video-tag-container">
+							<span class="video-tag parenting">Parenting</span>
+						</div>
+	
+						<h2 class="video-title">
+							The Single Most Important Parenting Strategy
+						</h2>
+	
+						<div class="video-info">
+							<div class="source">
+								<span>ParentPal · April 27, 2025</span>
+							</div>
+	
+							<div class="author">
+								<img
+									src="../assets/pp.svg"
+									alt="Author"
+									class="author-img" />
+								<div class="author-info">
+									<span class="author-name">Derry Riccardo</span>
+									<span class="author-role">Psikolog</span>
+								</div>
+							</div>
+						</div>
+	
+						<div class="video-player">
+							<img
+								src="../assets/video1-thumbnail.svg"
+								alt="Video Thumbnail"
+								class="video-thumbnail" />
+							<div class="play-button">
+								<i class="fas fa-play"></i>
+							</div>
+							<div class="video-source">Source: Pinterest</div>
+						</div>
+	
+						<div class="video-description">
+							<p>
+								Everyone loses their temper from time to time — but the stakes are
+								dizzyingly high when the focus of your fury is your own child.
+							</p>
+							<p>
+								Clinical psychologist and renowned parenting whisperer Becky
+								Kennedy is here to help. Not only does she have practical advice
+								to help parents manage the guilt and shame of their not-so-great
+								moments but she also models the types of conversations you can
+								have to be a better parent.
+							</p>
+							<p>
+								(Hint: this works in all other relationships too.) Bottom line?
+								It's never too late to reconnect.
+							</p>
+						</div>
+	
+						<div class="interaction-bar">
+							<div class="interaction-item">
+								<button class="like-btn">
+									<i class="far fa-thumbs-up"></i>
+								</button>
+								<span>30</span>
+							</div>
+							<div class="interaction-item">
+								<button class="dislike-btn">
+									<i class="far fa-thumbs-down"></i>
+								</button>
+								<span>1</span>
+							</div>
+							<div class="interaction-item">
+								<button class="share-btn">
+									<i class="fas fa-share"></i>
+								</button>
+							</div>
+							<div class="interaction-item">
+								<button class="bookmark-btn">
+									<i class="far fa-bookmark"></i>
+								</button>
+							</div>
+							<div class="interaction-item">
+								<button class="comment-btnn">
+									<i class="far fa-comment"></i>
+								</button>
+								<span>2</span>
+							</div>
+						</div>
+	
+						<div class="tags-container">
+							<span class="tags-label">Tags:</span>
+							<span class="tag">Parenting</span>
+							<span class="tag">Tantrum</span>
+							<span class="tag">Communication</span>
+							<span class="tag">Baby</span>
+							<span class="tag">Childhood</span>
+						</div>
+	
+						<!-- Comments Section -->
+						<div class="comments-section">
+							<h3>Comments (2)</h3>
+	
+							<div class="comment-form">
+								<img src="../assets/pp.svg" alt="User" class="user-img" />
+								<div class="comment-input-container">
+									<textarea placeholder="Write a comment..."></textarea>
+									<div class="comment-actions">
+										<div class="comment-tools">
+											<button class="tool-btn">
+												<i class="far fa-image"></i>
+											</button>
+											<button class="tool-btn">
+												<i class="far fa-smile"></i>
+											</button>
+										</div>
+										<div class="comment-submit">
+											<button class="cancel-btn">Cancel</button>
+											<button class="comment-btn">Comment</button>
+										</div>
+									</div>
+								</div>
+							</div>
+	
+							<div class="sort-options">
+								<button class="sort-btn active">Top</button>
+								<button class="sort-btn">Latest</button>
+								<button class="sort-btn">Oldest</button>
+							</div>
+	
+							<!-- Comment 1 -->
+							<div class="comment">
+								<div class="comment-header">
+									<div class="comment-author">
+										<img
+											src="../assets/pp.svg"
+											alt="User"
+											class="user-img" />
+										<div class="comment-author-info">
+											<span class="comment-author-name">Andriett</span>
+											<span class="comment-time">12 days</span>
+										</div>
+									</div>
+									<button class="more-btn">
+										<i class="fas fa-ellipsis-v"></i>
+									</button>
+								</div>
+								<div class="comment-content">
+									<p>
+										Saban ini bunda, kalo 2 tahun memang makin-makin tantrumnya.
+										Aku juga pernah ngalamin, kita sabar2 sama belajar ya.
+									</p>
+								</div>
+								<div class="comment-actions">
+									<button class="comment-like-btn">
+										<i class="far fa-thumbs-up"></i>
+										<span>3</span>
+									</button>
+									<button class="comment-dislike-btn">
+										<i class="far fa-thumbs-down"></i>
+										<span>0</span>
+									</button>
+									<button class="comment-reply-btn">Reply</button>
+								</div>
+							</div>
+	
+							<!-- Comment 2 -->
+							<div class="comment">
+								<div class="comment-header">
+									<div class="comment-author">
+										<img
+											src="../assets/pp.svg"
+											alt="User"
+											class="user-img" />
+										<div class="comment-author-info">
+											<span class="comment-author-name">Andriett</span>
+											<span class="comment-time">11 days</span>
+										</div>
+									</div>
+									<button class="more-btn">
+										<i class="fas fa-ellipsis-v"></i>
+									</button>
+								</div>
+								<div class="comment-content">
+									<p>
+										Anakku juga pernah tantrum parah di usia 2 tahun, tapi
+										bersabar solusi terbaik, perhatikan-nya dengan mendampingi
+										mereka atau berikan mainan baru.
+									</p>
+								</div>
+								<div class="comment-actions">
+									<button class="comment-like-btn">
+										<i class="far fa-thumbs-up"></i>
+										<span>5</span>
+									</button>
+									<button class="comment-dislike-btn">
+										<i class="far fa-thumbs-down"></i>
+										<span>0</span>
+									</button>
+									<button class="comment-reply-btn">Reply</button>
+								</div>
+							</div>
+						</div>
+					</div>
+	
+						<!-- More Content Grid Section -->
+						<section class="more-content">
+							<div class="container">
+								<h3>More Contents</h3>
+								<div class="content-grid">
+									<div class="content-card">
+										<div class="content-image">
+											<img
+												src="../assets/more1.svg"
+												alt="Kids handling big emotions" />
+										</div>
+										<p class="content-tags body-text">Parenting</p>
+										<h5>Helping Kids Handle Big Emotions</h5>
+										<span class="author">By Derry Riccardo</span>
+										<div class="content-meta">
+											<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
+											<span><i class="fa-regular fa-comment"></i> 2</span>
+										</div>
+									</div>
+				
+									<div class="content-card">
+										<div class="content-image">
+											<img
+												src="../assets/more2.svg"
+												alt="Screen Time Without the Stress" />
+										</div>
+										<p class="content-tags body-text">Parenting</p>
+										<h5>Screen Time Without the Stress</h5>
+										<span class="author">By Derry Riccardo</span>
+										<div class="content-meta">
+											<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
+											<span><i class="fa-regular fa-comment"></i> 2</span>
+										</div>
+									</div>
+				
+									<div class="content-card">
+										<div class="content-image">
+											<img
+												src="../assets/more3.svg"
+												alt="How to Be a Calm Parent (Even on Hard Days)" />
+										</div>
+										<p class="content-tags body-text">Parenting</p>
+										<h5>How to Be a Calm Parent (Even on Hard Days)</h5>
+										<span class="author">By Derry Riccardo</span>
+										<div class="content-meta">
+											<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
+											<span><i class="fa-regular fa-comment"></i> 2</span>
+										</div>
+									</div>
+				
+									<div class="content-card">
+										<div class="content-image">
+											<img
+												src="../assets/more4.svg"
+												alt="The Power of Play in Parenting" />
+										</div>
+										<p class="content-tags body-text">Parenting</p>
+										<h5>The Power of Play in Parenting</h5>
+										<span class="author">By Derry Riccardo</span>
+										<div class="content-meta">
+											<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
+											<span><i class="fa-regular fa-comment"></i> 2</span>
+										</div>
+									</div>
+							</div>
+						</section>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer>
+			<div class="container">
+				<div class="footer-grid">
+					<!-- Logo and Description -->
+					<div class="footer-about">
+						<div class="footer-logo">
+							<img src="../assets/logo.svg" alt="ParentPal Logo" />
+						</div>
+						<p class="body-text-2">
+							A supportive parenting app that offers expert tips with the aim to
+							nurture, inspire, and provide support for parents anywhere.
+						</p>
+					</div>
+
+					<!-- Information Links -->
+					<div class="footer-info">
+						<h5>Information</h5>
+						<ul class="body-text-2">
+							<li><a href="../index.html#about">About Us</a></li>
+							<li><a href="content.html">Content</a></li>
+							<li><a href="community.html">Community</a></li>
+							<li><a href="chatbot.html">Chatbot</a></li>
+						</ul>
+					</div>
+
+					<!-- Helpful Links -->
+					<div class="footer-links">
+						<h5>Helpful Links</h5>
+						<ul class="body-text-2">
+							<li><a href="faq.html">FAQ & Help</a></li>
+							<li><a href="#">Terms & Condition</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+						</ul>
+					</div>
+
+					<!-- Contact Info -->
+					<div class="footer-contact">
+						<h5>Contact Us</h5>
+						<ul class="body-text-2">
+							<li><i class="fas fa-phone"></i> +62 8888 8888 8888</li>
+							<li><i class="fas fa-envelope"></i> parentpal@gmail.com</li>
+						</ul>
+
+						<!-- Social Media moved here -->
+						<div class="social-links">
+							<a href="#"><i class="fab fa-facebook-f"></i></a>
+							<a href="#"><i class="fab fa-instagram"></i></a>
+							<a href="#"><i class="fab fa-linkedin-in"></i></a>
+							<a href="#"><i class="fab fa-tiktok"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Copyright -->
+				<div class="footer-bottom">
+					<p>Copyright © 2025 ParentPal. All rights reserved.</p>
+				</div>
+			</div>
+		</footer>
+
+		<script src="../js/auth-check.js"></script>
+		<script src="../layout/layout.js"></script>
+		<script src="../js/vid-content.js"></script>
+		
+	</body>
+</html>

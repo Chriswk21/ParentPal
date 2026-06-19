@@ -1,0 +1,291 @@
+/* Expert Community Additional Styles */
+
+/* Expert-specific modifications to existing community styles */
+.community-icon.expert {
+  background-color: #28a745;
+  color: white;
+}
+
+.create-btn.expert {
+  background-color: #28a745;
+  color: white;
+}
+
+.create-btn.expert:hover {
+  background-color: #1e7e34;
+}
+
+/* Notification badge for pending questions */
+.notification-badge {
+  background: #dc3545;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: auto;
+}
+
+/* Expert action buttons */
+.expert-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.answer-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+}
+
+.answer-btn:hover {
+  background-color: #1e7e34;
+}
+
+.consult-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+}
+
+.consult-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Dashboard-style Consultations Section - Matching Dashboard Widget */
+.consultations-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 5px;
+}
+
+.consultations-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #28a745;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.consultations-header h3 i {
+  color: #28a745;
+}
+
+.settings-btn {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.settings-btn:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Widget Card Style for Consultations */
+.consultations-widget {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  margin-bottom: 30px;
+}
+
+.consultations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Consultation Items - Exact Dashboard Style */
+.consultation-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
+}
+
+.consultation-item:last-child {
+  border-bottom: none;
+}
+
+.consultation-item:hover {
+  background-color: #f8f9fa;
+  margin: 0 -16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.consultation-time {
+  min-width: 80px;
+  margin-right: 20px;
+  text-align: left;
+}
+
+.consultation-time .time {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #28a745;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.consultation-time .duration {
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 1.2;
+}
+
+.consultation-details {
+  flex: 1;
+}
+
+.consultation-details .client-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.consultation-details .consultation-topic {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.consultation-details .consultation-type {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #888;
+  line-height: 1.2;
+}
+
+.consultation-details .consultation-type i {
+  color: #666;
+  font-size: 0.75rem;
+}
+
+.consultation-actions {
+  margin-left: 20px;
+}
+
+/* Dashboard-style Buttons */
+.btn-join {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 70px;
+}
+
+.btn-join:hover {
+  background-color: #218838;
+}
+
+.btn-prepare {
+  background-color: transparent;
+  color: #666;
+  border: 1px solid #ddd;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 70px;
+}
+
+.btn-prepare:hover {
+  background-color: #f8f9fa;
+  border-color: #aaa;
+  color: #333;
+}
+
+/* Mobile responsive adjustments */
+@media screen and (max-width: 768px) {
+  .consultation-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  .consultation-item:hover {
+    margin: 0;
+    padding: 16px 0;
+  }
+
+  .consultation-time {
+    min-width: auto;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .consultation-actions {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .btn-join,
+  .btn-prepare {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .consultations-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .expert-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .answer-btn,
+  .consult-btn {
+    width: 100%;
+  }
+
+  .consultations-widget {
+    padding: 16px;
+  }
+}
