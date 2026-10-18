@@ -14,12 +14,13 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 			rel="stylesheet" />
+		<link rel="stylesheet" href="./layout/design-system.css" />
 	</head>
 	<body>
 		<!-- Header/Navigation -->
 		<header>
 			<div class="container">
-				<nav class="navbar">
+				<nav class="navbar" aria-label="Main">
 					<div class="logo">
 						<a href="index.html">
 							<img src="./assets/logo.svg" alt="ParentPal Logo" />
@@ -71,583 +72,628 @@
 						</div>
 					</div>
 
-					<div class="mobile-menu">
+					<button class="mobile-menu" aria-label="Toggle menu">
 						<i class="fas fa-bars"></i>
-					</div>
+					</button>
 				</nav>
 			</div>
 		</header>
 
-		<!-- Hero Section -->
-		<section class="hero">
-			<div class="container">
-				<div class="hero-content">
-					<div class="hero-text">
-						<h1>
-							Empowering Parents with Practical Tools & Heartfelt Guidance
-						</h1>
-						<p>
-							Join a community of parents learning how to raise confident, kind,
-							and resilient children—one step at a time.
-						</p>
-						<button class="cta-btn">Get Started</button>
-					</div>
-					<div class="hero-image">
-						<img
-							src="./assets/hero-img.svg"
-							alt="Parents with child using laptop" />
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Popular Content Section -->
-		<section class="popular-content">
-			<div class="container">
-				<h2>Popular Content</h2>
-				<div class="section-header">
-					<h3>Featured Articles</h3>
-					<a href="#" class="view-all">View All</a>
-				</div>
-
-				<!-- Article Cards -->
-				<div class="article-list">
-					<div class="article-card">
-						<img
-							src="./assets/article1.svg"
-							alt="Family Talking"
-							class="article-image" />
-						<div class="article-content">
-							<p class="article-tags body-text">Parenting</p>
-							<h3 class="article-title">From Tantrums to Talking</h3>
-							<div class="article-meta body-text-2">
-								<span>By Derry Riccardo</span>
-								<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
-								<span><i class="fa-regular fa-comment"></i> 2</span>
+		<main>
+			<!-- Hero Section -->
+			<section class="hero">
+				<div class="container">
+					<div class="hero-content">
+						<div class="hero-text">
+							<p class="eyebrow anim-fade-up">Parenting, together</p>
+							<h1 class="anim-fade-up" style="--d: 60ms">
+								Empowering Parents with Practical Tools & Heartfelt Guidance
+							</h1>
+							<p class="hero-lead anim-fade-up" style="--d: 120ms">
+								Join a community of parents learning how to raise confident,
+								kind, and resilient children—one step at a time.
+							</p>
+							<div class="hero-actions anim-fade-up" style="--d: 180ms">
+								<a href="./html/signup.html" class="cta-btn">Get Started</a>
+								<a href="./html/content.html" class="text-link">
+									Browse content <i class="fas fa-arrow-right" aria-hidden="true"></i>
+								</a>
 							</div>
-							<div class="article-description">
-								<p class="body-text article-text">
-									Explore ways to understand your child’s emotional outbursts,
-									support their developing communication skills, and teach them
-									how to express their feelings in healthy, age-appropriate
-									ways.
-								</p>
-								<a href="#" class="read-more-btn">Read More</a>
-							</div>
+							<ul class="hero-points anim-fade-up" style="--d: 240ms">
+								<li><span>Expert-curated</span> articles &amp; videos</li>
+								<li><span>Supportive</span> parent community</li>
+								<li><span>24/7</span> parenting assistant</li>
+							</ul>
 						</div>
-					</div>
-
-					<div class="article-card">
-						<img
-							src="./assets/article2.svg"
-							alt="Family at Beach"
-							class="article-image" />
-						<div class="article-content">
-							<p class="article-tags body-text">Parenting</p>
-							<h3 class="article-title">Discipline Without Drama</h3>
-							<div class="article-meta">
-								<span>By Derry Riccardo</span>
-								<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
-								<span><i class="fa-regular fa-comment"></i> 2</span>
-							</div>
-							<div class="article-description">
-								<p class="body-text article-text">
-									Learn practical, research-backed techniques to set clear
-									boundaries and guide your child’s behavior—without yelling,
-									threats, or power struggles—while maintaining a loving and
-									respectful relationship.
-								</p>
-								<a href="#" class="read-more-btn">Read More</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="article-card">
-						<img
-							src="./assets/article3.svg"
-							alt="Parent Playing with Child"
-							class="article-image" />
-						<div class="article-content">
-							<p class="article-tags body-text">Parenting</p>
-							<h3 class="article-title">The Power of Positive Parenting</h3>
-							<div class="article-meta">
-								<span>By Derry Riccardo</span>
-								<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
-								<span><i class="fa-regular fa-comment"></i> 2</span>
-							</div>
-							<div class="article-description">
-								<p class="body-text article-text">
-									Discover how using encouragement, active listening, and
-									empathy can help you build a stronger bond with your child
-									while nurturing their confidence, independence, and emotional
-									well-being.
-								</p>
-								<a href="#" class="read-more-btn">Read More</a>
-							</div>
+						<div class="hero-image anim-fade" style="--d: 120ms">
+							<img
+								src="./assets/hero-img.svg"
+								alt="Parents with child using laptop" />
 						</div>
 					</div>
 				</div>
+			</section>
 
-				<div class="section-header">
-					<h3>Featured Videos</h3>
-					<a href="#" class="view-all">View All</a>
-				</div>
-				<div class="video-grid">
-					<a href="./html/vid-content.html">
-						<div class="video-card">
-							<img src="./assets/video1.svg" alt="Parenting Strategy" />
-							<div class="video-content">
-								<p class="article-tags body-text">Parenting</p>
-								<h4>The Most Important Parenting Strategy</h4>
+			<!-- Popular Content Section -->
+			<section class="popular-content">
+				<div class="container">
+					<div class="section-intro" data-reveal>
+						<p class="eyebrow rv">Library</p>
+						<h2 class="rv" style="--d: 60ms">Popular Content</h2>
+					</div>
+
+					<div class="section-header" data-reveal>
+						<h3 class="rv">Featured Articles</h3>
+						<a href="./html/content.html" class="view-all rv">
+							View All <i class="fas fa-arrow-right" aria-hidden="true"></i>
+						</a>
+					</div>
+
+					<!-- Article Cards -->
+					<div class="article-list" data-reveal>
+						<article class="article-card rv">
+							<img
+								src="./assets/article1.svg"
+								alt="Family Talking"
+								class="article-image" />
+							<div class="article-content">
+								<p class="article-tags">Parenting</p>
+								<h3 class="article-title">From Tantrums to Talking</h3>
 								<div class="article-meta">
 									<span>By Derry Riccardo</span>
-									<span
-										><i class="fa-regular fa-clock"></i> April 27, 2025</span
-									>
+									<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
+									<span><i class="fa-regular fa-comment"></i> 2</span>
+								</div>
+								<div class="article-description">
+									<p class="article-text">
+										Explore ways to understand your child’s emotional outbursts,
+										support their developing communication skills, and teach
+										them how to express their feelings in healthy,
+										age-appropriate ways.
+									</p>
+									<a href="#" class="read-more-btn">Read More</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="article-card rv" style="--d: 60ms">
+							<img
+								src="./assets/article2.svg"
+								alt="Family at Beach"
+								class="article-image" />
+							<div class="article-content">
+								<p class="article-tags">Parenting</p>
+								<h3 class="article-title">Discipline Without Drama</h3>
+								<div class="article-meta">
+									<span>By Derry Riccardo</span>
+									<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
+									<span><i class="fa-regular fa-comment"></i> 2</span>
+								</div>
+								<div class="article-description">
+									<p class="article-text">
+										Learn practical, research-backed techniques to set clear
+										boundaries and guide your child’s behavior—without yelling,
+										threats, or power struggles—while maintaining a loving and
+										respectful relationship.
+									</p>
+									<a href="#" class="read-more-btn">Read More</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="article-card rv" style="--d: 120ms">
+							<img
+								src="./assets/article3.svg"
+								alt="Parent Playing with Child"
+								class="article-image" />
+							<div class="article-content">
+								<p class="article-tags">Parenting</p>
+								<h3 class="article-title">The Power of Positive Parenting</h3>
+								<div class="article-meta">
+									<span>By Derry Riccardo</span>
+									<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
+									<span><i class="fa-regular fa-comment"></i> 2</span>
+								</div>
+								<div class="article-description">
+									<p class="article-text">
+										Discover how using encouragement, active listening, and
+										empathy can help you build a stronger bond with your child
+										while nurturing their confidence, independence, and
+										emotional well-being.
+									</p>
+									<a href="#" class="read-more-btn">Read More</a>
+								</div>
+							</div>
+						</article>
+					</div>
+
+					<div class="section-header section-header--videos" data-reveal>
+						<h3 class="rv">Featured Videos</h3>
+						<a href="./html/content.html" class="view-all rv">
+							View All <i class="fas fa-arrow-right" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="video-grid" data-reveal>
+						<a href="./html/vid-content.html" class="video-card rv">
+							<div class="video-thumb">
+								<img src="./assets/video1.svg" alt="Parenting Strategy" />
+								<span class="play-badge" aria-hidden="true"><i class="fas fa-play"></i></span>
+							</div>
+							<div class="video-content">
+								<p class="article-tags">Parenting</p>
+								<h4 class="article-title">The Most Important Parenting Strategy</h4>
+								<div class="article-meta">
+									<span>By Derry Riccardo</span>
+									<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
 									<span><i class="fa-regular fa-comment"></i> 2</span>
 								</div>
 							</div>
-						</div>
-					</a>
+						</a>
 
-					<div class="video-card">
-						<img src="./assets/video2.svg" alt="Staying Calm" />
-						<div class="video-content">
-							<p class="article-tags body-text">Parenting</p>
-							<h4 class="article-title">
-								How to Stay Calm When Your Child Isn’t
-							</h4>
-							<div class="article-meta">
-								<span>By Derry Riccardo</span>
-								<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
-								<span><i class="fa-regular fa-comment"></i> 2</span>
+						<a href="./html/vid-content.html" class="video-card rv" style="--d: 60ms">
+							<div class="video-thumb">
+								<img src="./assets/video2.svg" alt="Staying Calm" />
+								<span class="play-badge" aria-hidden="true"><i class="fas fa-play"></i></span>
 							</div>
-						</div>
+							<div class="video-content">
+								<p class="article-tags">Parenting</p>
+								<h4 class="article-title">How to Stay Calm When Your Child Isn’t</h4>
+								<div class="article-meta">
+									<span>By Derry Riccardo</span>
+									<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
+									<span><i class="fa-regular fa-comment"></i> 2</span>
+								</div>
+							</div>
+						</a>
+
+						<a href="./html/vid-content.html" class="video-card rv" style="--d: 120ms">
+							<div class="video-thumb">
+								<img src="./assets/video3.svg" alt="Family on Vacation" />
+								<span class="play-badge" aria-hidden="true"><i class="fas fa-play"></i></span>
+							</div>
+							<div class="video-content">
+								<p class="article-tags">Parenting</p>
+								<h4 class="article-title">How to Stay Calm When Your Child Isn’t</h4>
+								<div class="article-meta">
+									<span>By Derry Riccardo</span>
+									<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
+									<span><i class="fa-regular fa-comment"></i> 2</span>
+								</div>
+							</div>
+						</a>
 					</div>
+				</div>
+			</section>
 
-					<div class="video-card">
-						<img src="./assets/video3.svg" alt="Family on Vacation" />
-						<div class="video-content">
-							<p class="article-tags body-text">Parenting</p>
-							<h4 class="article-title">
-								How to Stay Calm When Your Child Isn’t
-							</h4>
-							<div class="article-meta">
-								<span>By Derry Riccardo</span>
-								<span><i class="fa-regular fa-clock"></i> April 27, 2025</span>
-								<span><i class="fa-regular fa-comment"></i> 2</span>
-							</div>
+			<!-- About Us Section -->
+			<section class="about-us" id="about">
+				<div class="container">
+					<div class="about-grid" data-reveal>
+						<div class="about-heading">
+							<p class="eyebrow rv">Who we are</p>
+							<h2 class="rv" style="--d: 60ms">About Us</h2>
+						</div>
+						<div class="about-content">
+							<p class="about-lead rv">
+								At ParentPal, we believe that great parenting doesn't come
+								"perfect"—it comes from learning, growing, and connecting with
+								your child. Our mission is to support parents on every step of
+								their journey, providing resources, tools, and community when you
+								need them most.
+							</p>
+							<p class="rv" style="--d: 60ms">
+								Whether you're navigating potty training, setting screen time
+								boundaries, or just trying to stay patient when everyone's tired,
+								we've been there! Our team combines expert advice, real-life
+								experiences from parents just like you, and current research to
+								help you make the best decisions for your family.
+							</p>
+							<p class="rv" style="--d: 120ms">
+								We're not here to tell you how to raise your child—we're here to
+								empower you with the knowledge and tools to make confident
+								parenting decisions that fit your values, beliefs, and family.
+							</p>
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
 
-		<!-- About Us Section -->
-		<section class="about-us" id="about">
-			<div class="container">
-				<h2>About Us</h2>
-				<div class="about-content">
-					<p>
-						At ParentPal, we believe that great parenting doesn't come
-						"perfect"—it comes from learning, growing, and connecting with your
-						child. Our mission is to support parents on every step of their
-						journey, providing resources, tools, and community when you need
-						them most.
-					</p>
-					<p>
-						Whether you're navigating potty training, setting screen time
-						boundaries, or just trying to stay patient when everyone's tired,
-						we've been there! Our team combines expert advice, real-life
-						experiences from parents just like you, and current research to help
-						you make the best decisions for your family.
-					</p>
-					<p>
-						We're not here to tell you how to raise your child—we're here to
-						empower you with the knowledge and tools to make confident parenting
-						decisions that fit your values, beliefs, and family.
-					</p>
-				</div>
-			</div>
-		</section>
-
-		<!-- Why Choose Us Section -->
-		<section class="why-choose-us">
-			<div class="container">
-				<h2>Why Choose Us?</h2>
-				<div class="benefits-grid">
-					<div class="benefit-image">
-						<img src="./assets/chooseus.svg" alt="Parents with child" />
+			<!-- Why Choose Us Section -->
+			<section class="why-choose-us">
+				<div class="container">
+					<div class="section-intro section-intro--center" data-reveal>
+						<p class="eyebrow rv">Why ParentPal</p>
+						<h2 class="rv" style="--d: 60ms">Why Choose Us?</h2>
 					</div>
-					<div class="benefit-card">
-						<h4>Expert-Curated Content</h4>
-						<p>
-							Our content is grounded in child development research and created
-							with insights from parenting professionals.
+					<div class="benefits-grid" data-reveal>
+						<div class="benefit-image rv">
+							<img src="./assets/chooseus.svg" alt="Parents with child" />
+						</div>
+						<ol class="benefit-list">
+							<li class="benefit-card rv" style="--d: 60ms">
+								<span class="benefit-index" aria-hidden="true">01</span>
+								<h4>Expert-Curated Content</h4>
+								<p>
+									Our content is grounded in child development research and
+									created with insights from parenting professionals.
+								</p>
+							</li>
+							<li class="benefit-card rv" style="--d: 120ms">
+								<span class="benefit-index" aria-hidden="true">02</span>
+								<h4>Supportive Parent Community</h4>
+								<p>
+									Join a safe space where real parents share experiences, ask
+									questions, and grow together—judgment-free.
+								</p>
+							</li>
+							<li class="benefit-card rv" style="--d: 180ms">
+								<span class="benefit-index" aria-hidden="true">03</span>
+								<h4>Practical & Actionable Tips</h4>
+								<p>
+									We focus on actionable advice you can use right away, even in
+									the middle of busy, messy parenting moments.
+								</p>
+							</li>
+							<li class="benefit-card rv" style="--d: 240ms">
+								<span class="benefit-index" aria-hidden="true">04</span>
+								<h4>24/7 Smart Parenting Assistant</h4>
+								<p>
+									Get instant, personalized answers and parenting tips anytime
+									with our friendly AI-powered chatbot—your 24/7 parenting
+									companion.
+								</p>
+							</li>
+						</ol>
+					</div>
+				</div>
+			</section>
+
+			<!-- Meet Our Experts Section -->
+			<section class="meet-experts">
+				<div class="container">
+					<div class="experts-head" data-reveal>
+						<div>
+							<p class="eyebrow rv">Our experts</p>
+							<h2 class="rv" style="--d: 60ms">Meet Our Top Experts</h2>
+						</div>
+						<p class="experts-intro rv" style="--d: 120ms">
+							Get to know the heart behind our guidance. Our parenting experts
+							bring years of experience, evidence-based strategies, and a deep
+							passion for helping families grow with confidence and connection.
 						</p>
 					</div>
-					<div class="benefit-card">
-						<h4>Supportive Parent Community</h4>
-						<p>
-							Join a safe space where real parents share experiences, ask
-							questions, and grow together—judgment-free.
-						</p>
-					</div>
-					<div class="benefit-card">
-						<h4>Practical & Actionable Tips</h4>
-						<p>
-							We focus on actionable advice you can use right away, even in the
-							middle of busy, messy parenting moments.
-						</p>
-					</div>
-					<div class="benefit-card">
-						<h4>24/7 Smart Parenting Assistant</h4>
-						<p>
-							Get instant, personalized answers and parenting tips anytime with
-							our friendly AI-powered chatbot—your 24/7 parenting companion.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
 
-		<!-- Meet Our Experts Section -->
-		<section class="meet-experts">
-			<div class="container">
-				<h2>Meet Our Top Experts</h2>
-				<p class="experts-intro">
-					Get to know the heart behind our guidance. Our parenting expert brings
-					years of experience, evidence-based strategies, and a deep passion for
-					helping families grow with confidence and connection.
-				</p>
-
-				<div class="experts-grid">
-					<!-- Expert 1 -->
-					<div class="expert-card">
-						<div class="expert-image">
-							<img src="./assets/experts1.svg" alt="Dr. Mary Doe" />
-						</div>
-						<h4>Dr. Mary Doe</h4>
-						<p>Pediatrician</p>
-					</div>
-
-					<!-- Expert 2 -->
-					<div class="expert-card">
-						<div class="expert-image">
-							<img src="./assets/experts2.svg" alt="Dr. Alicia Beth" />
-						</div>
-						<h4>Dr. Alicia Beth</h4>
-						<p>Psychologist</p>
-					</div>
-
-					<!-- Expert 3 -->
-					<div class="expert-card">
-						<div class="expert-image">
-							<img src="./assets/experts3.svg" alt="Dr. Michelle" />
-						</div>
-						<h4>Michelle Mackie</h4>
-						<p>Parenting Educators</p>
-					</div>
-
-					<!-- Expert 4 -->
-					<div class="expert-card">
-						<div class="expert-image">
-							<img src="./assets/experts4.svg" alt="Dr. Natasha" />
-						</div>
-						<h4>Dr. Natasha</h4>
-						<p>Psychologist</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Testimonial Section -->
-		<section class="testimonials">
-			<div class="container">
-				<h2>What Our Happy Users Say!</h2>
-
-				<div class="review-slider">
-					<div class="review-track">
-						<!-- Review Card 1 -->
-						<div class="review-card">
-							<div class="review-content">
-								<div class="review-stars" aria-label="Five stars rating">
-									★ ★ ★ ★ ★
-								</div>
-								<p class="review-text">
-									The expert resources and daily parenting tips really help me
-									stay calm and confident. It feels like having a parenting
-									coach in my pocket!
-								</p>
+					<div class="experts-grid" data-reveal>
+						<div class="expert-card rv">
+							<div class="expert-image">
+								<img src="./assets/experts1.svg" alt="Dr. Mary Doe" />
 							</div>
-							<div class="review-author">
-								<div class="author-image">
-									<img
-										src="https://i.pravatar.cc/150?img=26"
-										alt="Emily R's profile picture" />
-								</div>
-								<div class="author-info">
-									<h4>Emily R</h4>
-									<p>Mother of two</p>
-								</div>
-							</div>
+							<h4>Dr. Mary Doe</h4>
+							<p>Pediatrician</p>
 						</div>
 
-						<!-- Review Card 2 -->
-						<div class="review-card">
-							<div class="review-content">
-								<div class="review-stars" aria-label="Four stars rating">
-									★ ★ ★ ★ ☆
-								</div>
-								<p class="review-text">
-									I love how the content is age-specific. It gives me exactly
-									what I need for my 3-year-old, and the chatbot answers my
-									late-night concerns fast.
-								</p>
+						<div class="expert-card rv" style="--d: 60ms">
+							<div class="expert-image">
+								<img src="./assets/experts2.svg" alt="Dr. Alicia Beth" />
 							</div>
-							<div class="review-author">
-								<div class="author-image">
-									<img
-										src="https://i.pravatar.cc/150?img=31"
-										alt="Sarah M's profile picture" />
-								</div>
-								<div class="author-info">
-									<h4>Sarah M</h4>
-									<p>First-time mom</p>
-								</div>
-							</div>
+							<h4>Dr. Alicia Beth</h4>
+							<p>Psychologist</p>
 						</div>
 
-						<!-- Review Card 3 -->
-						<div class="review-card">
-							<div class="review-content">
-								<div class="review-stars" aria-label="Four stars rating">
-									★ ★ ★ ★ ☆
-								</div>
-								<p class="review-text">
-									The parenting community is so welcoming. It's comforting to
-									talk to other parents going through the same sleepless nights
-									and tantrums!
-								</p>
+						<div class="expert-card rv" style="--d: 120ms">
+							<div class="expert-image">
+								<img src="./assets/experts3.svg" alt="Michelle Mackie" />
 							</div>
-							<div class="review-author">
-								<div class="author-image">
-									<img
-										src="https://i.pravatar.cc/150?img=3"
-										alt="Jason L's profile picture" />
-								</div>
-								<div class="author-info">
-									<h4>Jason L</h4>
-									<p>Dad of twins</p>
-								</div>
-							</div>
+							<h4>Michelle Mackie</h4>
+							<p>Parenting Educator</p>
 						</div>
 
-						<!-- Review Card 4 -->
-						<div class="review-card">
-							<div class="review-content">
-								<div class="review-stars" aria-label="Five stars rating">
-									★ ★ ★ ★ ★
-								</div>
-								<p class="review-text">
-									Whenever I feel stuck or unsure, I open the app. The chatbot
-									gives calm, practical advice I can trust—especially during
-									stressful situations.
-								</p>
+						<div class="expert-card rv" style="--d: 180ms">
+							<div class="expert-image">
+								<img src="./assets/experts4.svg" alt="Dr. Natasha" />
 							</div>
-							<div class="review-author">
-								<div class="author-image">
-									<img
-										src="https://i.pravatar.cc/150?img=9"
-										alt="Michael T's profile picture" />
-								</div>
-								<div class="author-info">
-									<h4>Michael T</h4>
-									<p>Stay-at-home dad</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Review Card 5 -->
-						<div class="review-card">
-							<div class="review-content">
-								<div class="review-stars" aria-label="Five stars rating">
-									★ ★ ★ ★ ★
-								</div>
-								<p class="review-text">
-									The bite-sized videos and articles are perfect for busy
-									parents like me. I learn something new during every diaper
-									change!
-								</p>
-							</div>
-							<div class="review-author">
-								<div class="author-image">
-									<img
-										src="https://i.pravatar.cc/150?img=15"
-										alt="Jessica K's profile picture" />
-								</div>
-								<div class="author-info">
-									<h4>Jessica K</h4>
-									<p>Working mom</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Review Card 6 -->
-						<div class="review-card">
-							<div class="review-content">
-								<div class="review-stars" aria-label="Five stars rating">
-									★ ★ ★ ★ ★
-								</div>
-								<p class="review-text">
-									I didn’t expect to love the community feature, but now I check
-									in daily. It's full of real advice, encouragement, and zero
-									judgment.
-								</p>
-							</div>
-							<div class="review-author">
-								<div class="author-image">
-									<img
-										src="https://i.pravatar.cc/150?img=6"
-										alt="Laura P's profile picture" />
-								</div>
-								<div class="author-info">
-									<h4>Laura P</h4>
-									<p>Mom of a toddler</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Review Card 7 -->
-						<div class="review-card">
-							<div class="review-content">
-								<div class="review-stars" aria-label="Five stars rating">
-									★ ★ ★ ★ ★
-								</div>
-								<p class="review-text">
-									As a single parent, I often feel alone. This app helps me feel
-									supported and seen. The chatbot and community are my daily
-									lifelines.
-								</p>
-							</div>
-							<div class="review-author">
-								<div class="author-image">
-									<img
-										src="https://i.pravatar.cc/150?img=22"
-										alt="Marcus B's profile picture" />
-								</div>
-								<div class="author-info">
-									<h4>Marcus B</h4>
-									<p>Single dad</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Review Card 8 -->
-						<div class="review-card">
-							<div class="review-content">
-								<div class="review-stars" aria-label="Five stars rating">
-									★ ★ ★ ★ ★
-								</div>
-								<p class="review-text">
-									The personalized guidance really stands out. I feel like the
-									app knows my child and gives me just what I need, when I need
-									it.
-								</p>
-							</div>
-							<div class="review-author">
-								<div class="author-image">
-									<img
-										src="https://i.pravatar.cc/150?img=13"
-										alt="Anita G's profile picture" />
-								</div>
-								<div class="author-info">
-									<h4>Anita G</h4>
-									<p>Preschool teacher & mom</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Review Card 9 -->
-						<div class="review-card">
-							<div class="review-content">
-								<div class="review-stars" aria-label="Five stars rating">
-									★ ★ ★ ★ ★
-								</div>
-								<p class="review-text">
-									From potty training meltdowns to picky eating battles, this
-									app has been my secret weapon. The support feels human, not
-									robotic!
-								</p>
-							</div>
-							<div class="review-author">
-								<div class="author-image">
-									<img
-										src="https://i.pravatar.cc/150?img=18"
-										alt="Natalie F's profile picture" />
-								</div>
-								<div class="author-info">
-									<h4>Natalie F</h4>
-									<p>Mother of three</p>
-								</div>
-							</div>
+							<h4>Dr. Natasha</h4>
+							<p>Psychologist</p>
 						</div>
 					</div>
 				</div>
+			</section>
 
-				<div class="slider-controls">
-					<button class="slider-btn prev-btn" aria-label="Previous review">
-						←
-					</button>
-					<div class="slider-dots" role="tablist"></div>
-					<button class="slider-btn next-btn" aria-label="Next review">
-						→
-					</button>
-				</div>
-			</div>
-		</section>
+			<!-- Testimonial Section -->
+			<section class="testimonials">
+				<div class="container">
+					<div class="testimonials-head" data-reveal>
+						<div>
+							<p class="eyebrow rv">Testimonials</p>
+							<h2 class="rv" style="--d: 60ms">What Our Happy Users Say!</h2>
+						</div>
+						<div class="slider-controls rv" style="--d: 120ms">
+							<button class="slider-btn prev-btn" aria-label="Previous review">
+								<i class="fas fa-arrow-left" aria-hidden="true"></i>
+							</button>
+							<button class="slider-btn next-btn" aria-label="Next review">
+								<i class="fas fa-arrow-right" aria-hidden="true"></i>
+							</button>
+						</div>
+					</div>
 
-		<!-- Add Your Child's Data Section -->
-		<section class="add-data">
-			<div class="container">
-				<h2>Add Your Child's Data</h2>
-				<div class="data-content">
-					<div class="data-image">
-						<img
-							src="./assets/addchild.svg"
-							alt="Parent with child playing blocks" />
-					</div>
-					<div class="data-text">
-						<p>
-							Create a personalized space for each of your children to get
-							age-specific tips, track their growth, and receive tailored
-							parenting support.
-						</p>
-						<button class="add-btn">Add</button>
-					</div>
-				</div>
-			</div>
-		</section>
+					<div class="review-slider">
+						<div class="review-track">
+							<!-- Review Card 1 -->
+							<div class="review-card">
+								<div class="review-content">
+									<div class="review-stars" aria-label="Five stars rating">
+										★★★★★
+									</div>
+									<p class="review-text">
+										The expert resources and daily parenting tips really help me
+										stay calm and confident. It feels like having a parenting
+										coach in my pocket!
+									</p>
+								</div>
+								<div class="review-author">
+									<div class="author-image">
+										<img
+											src="https://i.pravatar.cc/150?img=26"
+											alt="Emily R's profile picture" />
+									</div>
+									<div class="author-info">
+										<h4>Emily R</h4>
+										<p>Mother of two</p>
+									</div>
+								</div>
+							</div>
 
-		<!-- Join Community Section -->
-		<section class="join-community" id="community">
-			<div class="container">
-				<h2>Join Our Community</h2>
-				<div class="community-content">
-					<div class="community-image">
-						<img src="./assets/joincommunity.svg" alt="Happy family together" />
+							<!-- Review Card 2 -->
+							<div class="review-card">
+								<div class="review-content">
+									<div class="review-stars" aria-label="Four stars rating">
+										★★★★<span class="star-off">★</span>
+									</div>
+									<p class="review-text">
+										I love how the content is age-specific. It gives me exactly
+										what I need for my 3-year-old, and the chatbot answers my
+										late-night concerns fast.
+									</p>
+								</div>
+								<div class="review-author">
+									<div class="author-image">
+										<img
+											src="https://i.pravatar.cc/150?img=31"
+											alt="Sarah M's profile picture" />
+									</div>
+									<div class="author-info">
+										<h4>Sarah M</h4>
+										<p>First-time mom</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Review Card 3 -->
+							<div class="review-card">
+								<div class="review-content">
+									<div class="review-stars" aria-label="Four stars rating">
+										★★★★<span class="star-off">★</span>
+									</div>
+									<p class="review-text">
+										The parenting community is so welcoming. It's comforting to
+										talk to other parents going through the same sleepless
+										nights and tantrums!
+									</p>
+								</div>
+								<div class="review-author">
+									<div class="author-image">
+										<img
+											src="https://i.pravatar.cc/150?img=3"
+											alt="Jason L's profile picture" />
+									</div>
+									<div class="author-info">
+										<h4>Jason L</h4>
+										<p>Dad of twins</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Review Card 4 -->
+							<div class="review-card">
+								<div class="review-content">
+									<div class="review-stars" aria-label="Five stars rating">
+										★★★★★
+									</div>
+									<p class="review-text">
+										Whenever I feel stuck or unsure, I open the app. The chatbot
+										gives calm, practical advice I can trust—especially during
+										stressful situations.
+									</p>
+								</div>
+								<div class="review-author">
+									<div class="author-image">
+										<img
+											src="https://i.pravatar.cc/150?img=9"
+											alt="Michael T's profile picture" />
+									</div>
+									<div class="author-info">
+										<h4>Michael T</h4>
+										<p>Stay-at-home dad</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Review Card 5 -->
+							<div class="review-card">
+								<div class="review-content">
+									<div class="review-stars" aria-label="Five stars rating">
+										★★★★★
+									</div>
+									<p class="review-text">
+										The bite-sized videos and articles are perfect for busy
+										parents like me. I learn something new during every diaper
+										change!
+									</p>
+								</div>
+								<div class="review-author">
+									<div class="author-image">
+										<img
+											src="https://i.pravatar.cc/150?img=15"
+											alt="Jessica K's profile picture" />
+									</div>
+									<div class="author-info">
+										<h4>Jessica K</h4>
+										<p>Working mom</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Review Card 6 -->
+							<div class="review-card">
+								<div class="review-content">
+									<div class="review-stars" aria-label="Five stars rating">
+										★★★★★
+									</div>
+									<p class="review-text">
+										I didn’t expect to love the community feature, but now I
+										check in daily. It's full of real advice, encouragement, and
+										zero judgment.
+									</p>
+								</div>
+								<div class="review-author">
+									<div class="author-image">
+										<img
+											src="https://i.pravatar.cc/150?img=6"
+											alt="Laura P's profile picture" />
+									</div>
+									<div class="author-info">
+										<h4>Laura P</h4>
+										<p>Mom of a toddler</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Review Card 7 -->
+							<div class="review-card">
+								<div class="review-content">
+									<div class="review-stars" aria-label="Five stars rating">
+										★★★★★
+									</div>
+									<p class="review-text">
+										As a single parent, I often feel alone. This app helps me
+										feel supported and seen. The chatbot and community are my
+										daily lifelines.
+									</p>
+								</div>
+								<div class="review-author">
+									<div class="author-image">
+										<img
+											src="https://i.pravatar.cc/150?img=22"
+											alt="Marcus B's profile picture" />
+									</div>
+									<div class="author-info">
+										<h4>Marcus B</h4>
+										<p>Single dad</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Review Card 8 -->
+							<div class="review-card">
+								<div class="review-content">
+									<div class="review-stars" aria-label="Five stars rating">
+										★★★★★
+									</div>
+									<p class="review-text">
+										The personalized guidance really stands out. I feel like the
+										app knows my child and gives me just what I need, when I
+										need it.
+									</p>
+								</div>
+								<div class="review-author">
+									<div class="author-image">
+										<img
+											src="https://i.pravatar.cc/150?img=13"
+											alt="Anita G's profile picture" />
+									</div>
+									<div class="author-info">
+										<h4>Anita G</h4>
+										<p>Preschool teacher & mom</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Review Card 9 -->
+							<div class="review-card">
+								<div class="review-content">
+									<div class="review-stars" aria-label="Five stars rating">
+										★★★★★
+									</div>
+									<p class="review-text">
+										From potty training meltdowns to picky eating battles, this
+										app has been my secret weapon. The support feels human, not
+										robotic!
+									</p>
+								</div>
+								<div class="review-author">
+									<div class="author-image">
+										<img
+											src="https://i.pravatar.cc/150?img=18"
+											alt="Natalie F's profile picture" />
+									</div>
+									<div class="author-info">
+										<h4>Natalie F</h4>
+										<p>Mother of three</p>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="community-text">
-						<p>
-							Parenting is easier when you're not alone. Connect with other
-							parents, get expert tips, ask questions, and share your journey in
-							a safe, supportive space.
-						</p>
-						<button class="join-btn">Join Now</button>
+
+					<div class="slider-dots" role="tablist" aria-label="Review pages"></div>
+				</div>
+			</section>
+
+			<!-- Add Your Child's Data Section -->
+			<section class="add-data">
+				<div class="container">
+					<div class="split" data-reveal>
+						<div class="split-image rv">
+							<img
+								src="./assets/addchild.svg"
+								alt="Parent with child playing blocks" />
+						</div>
+						<div class="split-text">
+							<p class="eyebrow rv">Personalized</p>
+							<h2 class="rv" style="--d: 60ms">Add Your Child's Data</h2>
+							<p class="rv" style="--d: 120ms">
+								Create a personalized space for each of your children to get
+								age-specific tips, track their growth, and receive tailored
+								parenting support.
+							</p>
+							<button class="add-btn rv" style="--d: 180ms">Add</button>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+
+			<!-- Join Community Section -->
+			<section class="join-community" id="community">
+				<div class="container">
+					<div class="split split--reverse" data-reveal>
+						<div class="split-image rv">
+							<img src="./assets/joincommunity.svg" alt="Happy family together" />
+						</div>
+						<div class="split-text">
+							<p class="eyebrow rv">Community</p>
+							<h2 class="rv" style="--d: 60ms">Join Our Community</h2>
+							<p class="rv" style="--d: 120ms">
+								Parenting is easier when you're not alone. Connect with other
+								parents, get expert tips, ask questions, and share your journey
+								in a safe, supportive space.
+							</p>
+							<button class="join-btn rv" style="--d: 180ms">Join Now</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
 
 		<!-- Footer -->
 		<footer>
@@ -679,7 +725,7 @@
 					<div class="footer-links">
 						<h5>Helpful Links</h5>
 						<ul class="body-text-2">
-							<li><a href="#">Support</a></li>
+							<li><a href="./html/faq.html">Support</a></li>
 							<li><a href="#">Terms & Condition</a></li>
 							<li><a href="#">Privacy Policy</a></li>
 						</ul>
@@ -693,12 +739,11 @@
 							<li><i class="fas fa-envelope"></i> parentpal@gmail.com</li>
 						</ul>
 
-						<!-- Social Media moved here -->
 						<div class="social-links">
-							<a href="#"><i class="fab fa-facebook-f"></i></a>
-							<a href="#"><i class="fab fa-instagram"></i></a>
-							<a href="#"><i class="fab fa-linkedin-in"></i></a>
-							<a href="#"><i class="fab fa-tiktok"></i></a>
+							<a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+							<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+							<a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+							<a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
 						</div>
 					</div>
 				</div>

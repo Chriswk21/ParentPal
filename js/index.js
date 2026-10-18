@@ -1,35 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-	// Button hover effects
-	const buttons = document.querySelectorAll("button");
-	buttons.forEach((button) => {
-		button.addEventListener("mouseenter", function () {
-			this.style.transform = this.classList.contains("cta-btn")
-				? "translateY(-3px)"
-				: "translateY(-2px)";
-			this.style.boxShadow = "0 5px 15px rgba(242, 125, 125, 0.3)";
-		});
-
-		button.addEventListener("mouseleave", function () {
-			this.style.transform = "translateY(0)";
-			this.style.boxShadow = "none";
-		});
-	});
-
-	// Card hover effects
-	const cards = document.querySelectorAll(
-		".article-card, .video-card, .expert-card, .testimonial-card, .benefit-card"
-	);
-	cards.forEach((card) => {
-		card.addEventListener("mouseenter", function () {
-			this.style.transform = "translateY(-5px)";
-			this.style.boxShadow = "0 10px 20px rgba(0, 0, 0, 0.1)";
-		});
-
-		card.addEventListener("mouseleave", function () {
-			this.style.transform = "translateY(0)";
-			this.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.05)";
-		});
-	});
+	// Hover styling lives in CSS (index.css / design-system.css).
+	const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 	// Smooth scrolling for anchor links
 	document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -52,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				// Scroll to target
 				window.scrollTo({
 					top: targetElement.offsetTop - 80, // Account for fixed header
-					behavior: "smooth",
+					behavior: reduceMotion.matches ? "auto" : "smooth",
 				});
 			}
 		});
@@ -124,10 +95,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		dotsContainer.innerHTML = "";
 
 		for (let i = 0; i < totalSlides; i++) {
-			const dot = document.createElement("span");
+			const dot = document.createElement("button");
+			dot.type = "button";
 			dot.classList.add("dot");
+			dot.setAttribute("aria-label", `Show reviews page ${i + 1}`);
 			if (i === Math.floor(currentIndex / visibleCards)) {
 				dot.classList.add("active");
+				dot.setAttribute("aria-current", "true");
 			}
 			dot.addEventListener("click", () => moveToIndex(i * visibleCards));
 			dotsContainer.appendChild(dot);
@@ -136,6 +110,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	function startAutoSlide() {
 		clearInterval(autoSlideInterval);
+		// Auto-advancing carousels are a vestibular trigger; manual only.
+		if (reduceMotion.matches) return;
 		autoSlideInterval = setInterval(() => {
 			moveToIndex(currentIndex + visibleCards);
 		}, 5000);
