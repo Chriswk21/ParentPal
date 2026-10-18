@@ -3,14 +3,53 @@ const mobileMenuButton = document.querySelector(".mobile-menu");
 const navLinks = document.querySelector(".nav-links");
 
 if (mobileMenuButton && navLinks) {
+	mobileMenuButton.setAttribute("aria-expanded", "false");
+
 	mobileMenuButton.addEventListener("click", () => {
-		navLinks.classList.toggle("show");
+		const isOpen = navLinks.classList.toggle("show");
+		mobileMenuButton.setAttribute("aria-expanded", String(isOpen));
 
 		const icon = mobileMenuButton.querySelector("i");
 		icon.classList.toggle("fa-bars");
 		icon.classList.toggle("fa-times");
 	});
 }
+
+// Mark the current page in the main navigation
+(function markActiveNav() {
+	if (!navLinks) return;
+	const current = window.location.pathname.split("/").pop() || "index.html";
+	navLinks.querySelectorAll("a").forEach((link) => {
+		const target = (link.getAttribute("href") || "").split("/").pop();
+		if (target === current) {
+			link.classList.add("is-active");
+			link.setAttribute("aria-current", "page");
+		}
+	});
+})();
+
+// Scroll reveal: [data-reveal] containers get .is-in once visible.
+// Children opt in with .rv (styles in design-system.css).
+(function initReveal() {
+	const groups = document.querySelectorAll("[data-reveal]");
+	if (!groups.length || !("IntersectionObserver" in window)) return;
+
+	document.documentElement.classList.add("js-reveal");
+
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("is-in");
+					observer.unobserve(entry.target);
+				}
+			});
+		},
+		{ rootMargin: "0px 0px -10% 0px", threshold: 0.1 }
+	);
+
+	groups.forEach((group) => observer.observe(group));
+})();
 
 // Profile dropdown functionality
 const profileIcon = document.getElementById("profile-icon");

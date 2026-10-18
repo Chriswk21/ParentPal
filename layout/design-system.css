@@ -1,0 +1,539 @@
+/* ==========================================================================
+   ParentPal — design system layer
+   Loaded LAST on every page so it can normalise the page stylesheets.
+
+   Rules (SKILLPENTING/.kiro/steering/design-rules.md):
+   - palette unchanged
+   - no gradients, no glassmorphism, no heavy shadows
+   - small radii instead of pills / large rounded cards
+   - hover = colour/border change, not "lift"; press = tiny scale
+   Motion (SKILLPENTING/.kiro/skills/animate + accessible-animation):
+   - transform/opacity only, strong ease-out, UI under 300ms
+   - hover motion gated to fine pointers
+   - prefers-reduced-motion: movement becomes a short fade
+   ========================================================================== */
+
+/* Page stylesheets (dashboard.css, profile.css) redefine these tokens.
+   Re-assert the flat versions here; colours are left untouched. */
+:root {
+	--primary-dark: #ff6b6b;
+	--on-primary: #ffffff;
+	--radius-sm: 4px;
+	--border-radius: 6px;
+	--line: 1px solid var(--border-color);
+	--line-accent: 1px solid var(--primary-light);
+	--shadow: none;
+	--shadow-hover: none;
+	--shadow-float: 0 8px 24px rgba(51, 51, 51, 0.08);
+	--bg-gradient: var(--bg-accent);
+	--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+	--ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+	--transition: color 200ms ease, background-color 200ms ease,
+		border-color 200ms ease, opacity 200ms ease,
+		transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mobile-menu {
+	background: none;
+	border: 0;
+	color: var(--text-color);
+	line-height: 1;
+}
+
+/* ---------- Scroll reveal ----------
+   layout.js adds .js-reveal to <html> and .is-in to [data-reveal]
+   containers as they enter the viewport. Without JS, nothing is hidden. */
+.js-reveal .rv {
+	opacity: 0;
+	transform: translateY(16px);
+	transition: opacity 600ms var(--ease-out) var(--d, 0ms),
+		transform 700ms var(--ease-out) var(--d, 0ms);
+}
+
+.js-reveal .is-in .rv {
+	opacity: 1;
+	transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.js-reveal .rv {
+		transform: none;
+		transition: opacity 200ms ease;
+	}
+}
+
+/* ---------- Surfaces: flat, bordered, no lift ---------- */
+.article-card,
+.video-card,
+.content-card,
+.community-card,
+.widget-card,
+.performance-card,
+.quick-link,
+.support-option,
+.accordion-item,
+.profile-section,
+.profile-header,
+.edit-actions,
+.consultations-widget,
+.login-container,
+.signup-container,
+.stat-item,
+.stat-card {
+	box-shadow: none;
+}
+
+.content-card,
+.community-card,
+.widget-card,
+.performance-card,
+.quick-link,
+.support-option,
+.accordion-item,
+.profile-section,
+.profile-header,
+.edit-actions,
+.consultations-widget,
+.login-container,
+.signup-container {
+	border: var(--line);
+	border-radius: var(--border-radius);
+}
+
+/* Cards on pages other than the landing page keep their card shape */
+.content-header ~ section .article-card,
+.featured-content .article-card,
+.content-video .video-card {
+	border: var(--line);
+	border-radius: var(--border-radius);
+}
+
+.article-card:hover,
+.video-card:hover,
+.content-card:hover,
+.community-card:hover,
+.widget-card:hover,
+.performance-card:hover,
+.quick-link:hover,
+.support-option:hover,
+.benefit-card:hover,
+.expert-card:hover,
+.review-card:hover,
+.setting-item:hover {
+	transform: none;
+	box-shadow: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.content-card:hover,
+	.community-card:hover,
+	.widget-card:hover,
+	.performance-card:hover,
+	.quick-link:hover,
+	.support-option:hover,
+	.setting-item:hover,
+	.content-header ~ section .article-card:hover,
+	.featured-content .article-card:hover,
+	.content-video .video-card:hover {
+		border-color: var(--primary-color);
+	}
+}
+
+/* ---------- Buttons: small radius, no lift/glow ---------- */
+.read-more-btn,
+.load-more-btn,
+.create-btn,
+.join-btn,
+.comment-btn,
+.sort-btn,
+.category-btn,
+.mobile-sidebar-toggle,
+.btn-join,
+.btn-prepare,
+.btn-primary,
+.btn-secondary,
+.btn-edit,
+.btn-save,
+.btn-cancel,
+.btn-submit,
+.auth-modal-btn,
+.draft-btn,
+.schedule-btn,
+.analytics-btn,
+.edit-btn,
+.stats-btn,
+.publish-btn,
+.schedule-edit-btn,
+.answer-btn,
+.consult-btn,
+.chat-btn,
+.view-all-btn,
+.view-all-drafts,
+.view-all-scheduled,
+.view-analytics,
+.quick-action-btn,
+.expert-action-btn {
+	border-radius: var(--radius-sm);
+	box-shadow: none;
+	transition: var(--transition);
+}
+
+.read-more-btn:hover,
+.load-more-btn:hover,
+.create-btn:hover,
+.join-btn:hover,
+.comment-btn:hover,
+.btn-join:hover,
+.btn-primary:hover,
+.btn-edit:hover,
+.btn-save:hover,
+.btn-cancel:hover,
+.auth-modal-btn-primary:hover,
+.auth-modal-btn-secondary:hover,
+.draft-btn:hover,
+.schedule-btn:hover,
+.analytics-btn:hover,
+.edit-btn:hover,
+.stats-btn:hover,
+.publish-btn:hover,
+.schedule-edit-btn:hover,
+.quick-action-btn:hover,
+.expert-action-btn:hover,
+.change-avatar-btn:hover,
+.slider-btn:hover {
+	transform: none;
+	box-shadow: none;
+}
+
+/* Primary fills darken slightly on hover instead of lifting */
+@media (hover: hover) and (pointer: fine) {
+	.read-more-btn:hover,
+	.load-more-btn:hover,
+	.create-btn:not(.expert):hover,
+	.comment-btn:hover,
+	.mobile-sidebar-toggle:hover,
+	.consult-btn:hover {
+		background-color: var(--primary-dark);
+		color: var(--on-primary);
+	}
+}
+
+/* Press feedback: 100–160ms, scale not below 0.97 */
+.read-more-btn:active,
+.load-more-btn:active,
+.create-btn:active,
+.join-btn:active,
+.comment-btn:active,
+.category-btn:active,
+.sort-btn:active,
+.btn-join:active,
+.btn-prepare:active,
+.btn-primary:active,
+.btn-secondary:active,
+.btn-edit:active,
+.btn-save:active,
+.btn-cancel:active,
+.btn-submit:active,
+.auth-modal-btn:active,
+.draft-btn:active,
+.schedule-btn:active,
+.analytics-btn:active,
+.edit-btn:active,
+.stats-btn:active,
+.publish-btn:active,
+.schedule-edit-btn:active,
+.answer-btn:active,
+.consult-btn:active,
+.chat-btn:active,
+.quick-action-btn:active,
+.expert-action-btn:active,
+.login-btn:active {
+	transform: scale(0.97);
+}
+
+/* Category / filter chips */
+.category-btn {
+	padding: 7px 16px;
+	font-size: 0.85rem;
+	font-weight: 500;
+}
+
+/* ---------- Inputs ---------- */
+.search-container input,
+.faq-search input,
+.comment-input-container textarea,
+.edit-input,
+.privacy-select,
+.sort-select,
+.time-filter,
+.form-group input,
+.form-section input[type="text"],
+.form-section input[type="email"],
+.form-section input[type="tel"],
+.form-section input[type="password"],
+.form-section select {
+	border-radius: var(--radius-sm);
+	box-shadow: none;
+	transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.search-container input:focus,
+.faq-search input:focus,
+.edit-input:focus,
+.form-group input:focus,
+.form-section input:focus,
+.form-section select:focus {
+	outline: none;
+	border-color: var(--primary-dark);
+	box-shadow: 0 0 0 3px var(--bg-accent);
+}
+
+.faq-search button {
+	border-radius: var(--radius-sm);
+}
+
+/* ---------- Tags / badges / status pills ---------- */
+.article-tags,
+.video-tag,
+.content-tags {
+	width: auto;
+	height: auto;
+	display: inline-block;
+	align-self: flex-start;
+	font-size: 0.7rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	line-height: 1.4;
+	padding: 4px 10px;
+	border-radius: var(--radius-sm);
+}
+
+.tag,
+.schedule-status,
+.todo-priority,
+.notification-badge,
+.article-status,
+.video-status,
+.content-status,
+.expert-badge,
+.expert-badge-large {
+	border-radius: var(--radius-sm);
+}
+
+/* ---------- Gradients & glass → flat ---------- */
+.dashboard-header {
+	background: var(--bg-light);
+	border: var(--line);
+	box-shadow: none;
+}
+
+.dashboard-header.expert {
+	background: var(--expert-color);
+	border-color: var(--expert-color);
+}
+
+.stat-card.expert,
+.expert-badge-large {
+	backdrop-filter: none;
+	-webkit-backdrop-filter: none;
+}
+
+.stat-item,
+.stat-card {
+	background: var(--bg-accent);
+	border: var(--line);
+}
+
+.stat-card.expert {
+	background: rgba(255, 255, 255, 0.12);
+	border-color: rgba(255, 255, 255, 0.25);
+}
+
+.progress-bar {
+	border-radius: 0;
+	height: 4px;
+}
+
+.progress-fill {
+	background: var(--primary-color);
+}
+
+.avatar-circle {
+	box-shadow: none;
+}
+
+.avatar-circle.expert,
+.profile-header .expert-badge {
+	background: #10b981;
+}
+
+.text-overlay {
+	background: rgba(51, 51, 51, 0.55);
+	padding: 28px 32px;
+}
+
+/* ---------- Dashboard widgets ---------- */
+.widget-header {
+	background: var(--bg-light);
+	padding: 1.25rem 1.5rem;
+}
+
+.widget-header h3 {
+	font-size: 1.05rem;
+}
+
+.schedule-item,
+.consultation-item,
+.activity-item,
+.saved-item,
+.notification-item,
+.todo-item,
+.discussion-item,
+.progress-item,
+.setting-item {
+	border-radius: var(--radius-sm);
+}
+
+.saved-icon,
+.widget-action,
+.saved-action {
+	border-radius: var(--radius-sm);
+}
+
+/* ---------- Community sidebar ---------- */
+.sidebar {
+	border-right: var(--line);
+}
+
+.nav-link,
+.community-list li {
+	border-radius: var(--radius-sm);
+}
+
+/* ---------- Chatbot ---------- */
+.chat-header h1 {
+	letter-spacing: -0.02em;
+}
+
+.bubble {
+	border-radius: 12px;
+	box-shadow: none;
+	border: 1px solid rgba(51, 51, 51, 0.06);
+}
+
+.bot-message .bubble {
+	border-top-left-radius: var(--radius-sm);
+}
+
+.user-message .bubble {
+	border-color: transparent;
+	border-top-right-radius: var(--radius-sm);
+}
+
+.bubble p {
+	margin-bottom: 0;
+}
+
+.input-container {
+	border-radius: var(--border-radius);
+	box-shadow: none;
+	border: 1px solid rgba(51, 51, 51, 0.1);
+	transition: border-color 200ms ease;
+}
+
+.input-container:focus-within {
+	border-color: var(--primary-dark);
+}
+
+.option-btn {
+	border-radius: var(--radius-sm);
+}
+
+.input-btn {
+	border-radius: var(--radius-sm);
+}
+
+/* ---------- Video detail ---------- */
+.video-player {
+	border-radius: var(--radius-sm);
+}
+
+.play-button {
+	transition: background-color 200ms ease, color 200ms ease;
+}
+
+.back-btn {
+	border-radius: var(--radius-sm);
+}
+
+/* ---------- FAQ accordion ---------- */
+.accordion-item {
+	margin-bottom: 10px;
+}
+
+.accordion-header {
+	transition: background-color 150ms ease;
+}
+
+.accordion-icon {
+	transition: transform 200ms var(--ease-out);
+}
+
+.accordion-content {
+	transition: max-height 250ms var(--ease-out), padding 250ms var(--ease-out);
+}
+
+.faq-section h2 {
+	border-bottom: 1px solid var(--text-color);
+}
+
+/* ---------- Modals ---------- */
+.auth-modal,
+.modal {
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow-float);
+}
+
+.auth-modal {
+	transform: scale(0.96);
+	transition: transform 220ms var(--ease-out);
+}
+
+.auth-modal-overlay {
+	transition: opacity 200ms var(--ease-out), visibility 0s linear 200ms;
+}
+
+.auth-modal-overlay.active {
+	transition: opacity 200ms var(--ease-out), visibility 0s;
+}
+
+.auth-modal-btn {
+	text-transform: none;
+	letter-spacing: 0;
+}
+
+/* ---------- Toast notifications (dashboard/profile JS) ---------- */
+.notification {
+	border-radius: var(--border-radius);
+}
+
+/* ---------- Reduced motion safety net ----------
+   Durations are not zeroed globally so the intentional fades survive. */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+	}
+
+	.review-track {
+		transition: transform 0.01ms;
+	}
+
+	.auth-modal {
+		transform: none;
+		transition: none;
+	}
+}
